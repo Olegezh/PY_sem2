@@ -1,0 +1,22 @@
+# 4. Задайте список из N элементов, заполненных числами из промежутка [-N, N]. Найдите произведение элементов на указанных позициях. Позиции хранятся в файле file.txt в одной строке одно число.
+
+## не получилось решить задачу :(
+
+from random import randint
+
+def list(n):
+    list = []
+    for i in range(n):
+        list.append(randint(-n, n))
+    return list
+
+n = int(input('Введите число N: '))
+numbers = list(n)
+print(numbers)
+
+f = open('file.txt')
+result = 1
+for line in f:
+    result = result * list[int(line)]
+
+print('= ', result)
